@@ -1,46 +1,101 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Love Story</title>
-    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <div class="heart-background">
-        <div class="heart"></div>
-        <div class="heart"></div>
-        <div class="heart"></div>
-        <div class="heart"></div>
-        <div class="heart"></div>
-        <div class="heart"></div>
-        <div class="heart"></div>
-        <div class="heart"></div>
-        <div class="heart"></div>
-        <div class="heart"></div>
-        <div class="heart"></div>
-        <div class="heart"></div>
-        <div class="heart"></div>
-        <div class="heart"></div>
-    </div>
-    <div class="content">
-        <div class="header">
-            <h1>Our Love Story</h1>
-            <p>Every moment with you is precious</p>
-        </div>
-        <div class="section">
-            <h2>How We Met</h2>
-            <p>It all started when we crossed paths on a sunny afternoon...</p>
-        </div>
-        <div class="gallery">
-            <img src="images/love1.jpg" alt="Love Image 1">
-            <img src="images/love2.jpg" alt="Love Image 2">
-            <img src="images/love3.jpg" alt="Love Image 3">
-        </div>
-        <div class="footer">
-            <p>With all my love, forever.</p>
-        </div>
-    </div>
-</body>
-</html>
+<style>
+    /* Inline styles for basic layout */
+    body {
+        overflow-y: scroll;
+        font-family: 'Lora', serif; /* Ensure font is set even in inline styles */
+        margin: 0;
+        padding: 0;
+        line-height: 1.6;
+        color: #333;
+        background: linear-gradient(to bottom, #ffe6f0, #ffccd5);
+        overflow-x: hidden;
+        position: relative;
+    }
+    .content {
+        padding: 20px;
+        position: relative; /* For z-index context */
+        z-index: 1; /* Above heart background */
+        text-align: center; /* Center content within .content */
+    }
+    .story-title {
+        text-align: center;
+        font-size: 2.2rem;
+        color: #555; /* **DARKER GRAY - Matching Subtitle - CORRECT COLOR NOW** */
+        margin-bottom: 10px;
+        line-height: 1.2;
+    }
+    .story-subtitle {
+        text-align: center;
+        font-size: 1.2rem;
+        color: #555; /* Darker gray for subtitle */
+        font-style: italic;
+        margin-bottom: 30px;
+        line-height: 1.4;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .story-item {
+        margin-bottom: 40px;
+        text-align: center; /* Ensure images and captions are centered */
+    }
+    .story-item img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        margin-bottom: 10px;
+    }
+    .story-item .caption {
+        font-size: 1rem;
+        color: #555;
+        font-style: italic;
+    }
+    #loading-indicator {
+        text-align: center;
+        padding: 20px;
+        color: #777;
+    }
+    /* Heart Background Styles (Corrected and Complete) */
+    .heart-background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        pointer-events: none;
+        overflow: hidden;
+    }
+    .heart {
+        content: '';
+        position: absolute;
+        width: 15px;
+        height: 15px;
+        background: #ffb3c6;
+        border-radius: 50% 50% 50% 50% / 50% 50% 0% 50%;
+        transform: rotate(-45deg);
+        animation: float 6s infinite ease-in-out alternate;
+        opacity: 0.5;
+    }
+    /* Heart positioning - ensuring they are within .heart-background */
+    .heart-background .heart:nth-child(1) { top: 15%; left: 10%; animation-delay: 0s; animation-duration: 7s; opacity: 0.4;}
+    .heart-background .heart:nth-child(2) { top: 25%; left: 30%; animation-delay: 1s; animation-duration: 6s; }
+    .heart-background .heart:nth-child(3) { top: 40%; left: 50%; animation-delay: 3s; animation-duration: 5s; opacity: 0.6;}
+    .heart-background .heart:nth-child(4) { top: 60%; left: 70%; animation-delay: 2s; animation-duration: 7s; }
+    .heart-background .heart:nth-child(5) { top: 80%; left: 90%; animation-delay: 4s; animation-duration: 6s; opacity: 0.5;}
+    .heart-background .heart:nth-child(6) { top: 10%; left: 60%; animation-delay: 5s; animation-duration: 5s; }
+    .heart-background .heart:nth-child(7) { top: 35%; left: 15%; animation-delay: 1.5s; animation-duration: 7s; opacity: 0.7;}
+    .heart-background .heart:nth-child(8) { top: 55%; left: 40%; animation-delay: 3.5s; animation-duration: 6s; }
+    .heart-background .heart:nth-child(9) { top: 75%; left: 5%;  animation-delay: 2.5s; animation-duration: 5s; opacity: 0.4;}
+    .heart-background .heart:nth-child(10){ top: 90%; left: 80%; animation-delay: 4.5s; animation-duration: 7s; }
+    .heart-background .heart:nth-child(11) { top: 5%; left: 45%; animation-delay: 0.5s; animation-duration: 6.5s; opacity: 0.5;}
+    .heart-background .heart:nth-child(12) { top: 20%; left: 85%; animation-delay: 2.8s; animation-duration: 5.5s; }
+    .heart-background .heart:nth-child(13) { top: 45%; left: 25%; animation-delay: 4.2s; animation-duration: 7.5s; opacity: 0.6;}
+    .heart-background .heart:nth-child(14) { top: 65%; left: 55%; animation-delay: 1.8s; animation-duration: 6.5s; }
+    .heart-background .heart:nth-child(15) { top: 85%; left: 35%; animation-delay: 3.1s; animation-duration: 5.5s; opacity: 0.7;}
+    @keyframes float {
+        from { transform: translateY(0) rotate(-45deg); }
+        to { transform: translateY(-15px) rotate(-35deg); }
+    }
+</style>
