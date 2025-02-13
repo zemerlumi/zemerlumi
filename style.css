@@ -1,10 +1,10 @@
-/* Base Styles */
+/* style.css */
 body {
   font-family: 'Lora', serif;
   margin: 0;
   background: #fff0f5;
-  color: #333;
-  line-height: 1.6;
+  color: #2d2d2d;
+  line-height: 1.5;
   overflow-x: hidden;
 }
 
@@ -21,76 +21,99 @@ body {
 
 .heart-bg span {
   position: absolute;
-  color: rgba(255, 105, 180, 0.3);
-  animation: float 12s infinite linear;
+  color: rgba(255, 105, 180, 0.2);
+  animation: float 15s infinite linear;
+  font-size: 1.5rem;
 }
 
 /* Main Content */
 .content-wrapper {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 40px 20px;
+  max-width: 100%;
+  padding: 20px 15px;
 }
 
 .header-section {
   text-align: center;
-  padding: 60px 0 40px;
+  padding: 40px 15px 30px;
 }
 
 .main-title {
-  font-size: 2.5rem;
-  color: #4a4a4a;
-  margin-bottom: 20px;
+  font-size: 24px;
+  color: #3a3a3a;
+  margin: 0 auto 15px;
+  line-height: 1.3;
+  max-width: 90%;
 }
 
 .love-message {
-  font-size: 1.1rem;
-  line-height: 1.8;
-  margin-bottom: 60px;
-  padding: 0 20px;
+  font-size: 16px;
+  text-align: center;
+  max-width: 90%;
+  margin: 0 auto 40px;
+  padding: 0 10px;
 }
 
 /* Image Sections */
 .memory-section {
-  margin: 50px 0;
+  margin: 30px auto;
+  width: 100%;
+  max-width: 600px;
   text-align: center;
 }
 
 .memory-img {
   width: 100%;
-  max-width: 600px;
   height: auto;
-  border-radius: 10px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  margin: 0 auto 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  margin: 0 auto 15px;
 }
 
 .caption {
-  font-style: italic;
-  color: #666;
-  font-size: 0.95rem;
-  max-width: 500px;
+  font-size: 14px;
+  color: #555;
+  padding: 0 15px;
+  max-width: 80%;
   margin: 0 auto;
+  font-style: italic;
 }
 
-/* Animations */
 @keyframes float {
   0% { transform: translateY(100vh) rotate(0deg); }
   100% { transform: translateY(-100vh) rotate(360deg); }
 }
 
-/* Mobile Optimization */
-@media (max-width: 768px) {
+/* Mobile-Specific Fixes */
+@media (max-width: 480px) {
+  .header-section {
+    padding: 30px 10px;
+  }
+
   .main-title {
-    font-size: 2rem;
-    padding: 0 15px;
+    font-size: 22px;
+    max-width: 100%;
   }
-  
+
+  .love-message {
+    font-size: 15px;
+    max-width: 100%;
+  }
+
+  .memory-section {
+    margin: 25px auto;
+  }
+
   .memory-img {
-    border-radius: 8px;
+    border-radius: 6px;
   }
-  
+
   .caption {
-    padding: 0 15px;
+    font-size: 13px;
+    max-width: 90%;
+  }
+
+  .heart-bg span {
+    font-size: 1.2rem;
+    animation-duration: 20s;
   }
 }
