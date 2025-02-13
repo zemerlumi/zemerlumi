@@ -1,36 +1,319 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>For Dreni & Lumi</title>
-    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css"> </head>
-<body>
-    <div class="heart-background">
-        <div class="heart"></div>
-        <div class="heart"></div>
-        <div class="heart"></div>
-        <div class="heart"></div>
-        <div class="heart"></div>
-        <div class="heart"></div>
-        <div class="heart"></div>
-        <div class="heart"></div>
-        <div class="heart"></div>
-        <div class="heart"></div>
-        <div class="heart"></div>
-        <div class="heart"></div>
-        <div class="heart"></div>
-        <div class="heart"></div>
-        <div class="heart"></div>
-    </div>
-    <div class="content">
-        <p class="story-title">Kjo faqe i dedikohet dashnis Drenit,<br>Lumit &lt;3</p>
-        <p class="story-subtitle">Lumni Brahimi, je djali ma i bukur, ma i sjellshmi, ma pasterti, ma seksi, ma i jashtzakonshmi, ma i omli edhe djali ma perfekt per mu.</p>
-        <div id="story-container">
-            </div>
-        <div id="loading-indicator">Loading more memories...</div>
-    </div>
 
-    <script src="script.js"></script> </body>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>For Dreni & Lumi</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+
+        /* Inline styles for basic layout - consider moving to style.css for better organization in larger projects */
+
+        body {
+
+            overflow-y: scroll; /* Ensure scrollbar is always visible for better UX */
+
+        }
+
+        .content {
+
+            padding: 20px; /* Reduced padding from previous version */
+
+        }
+
+        .story-title { /* New class for the main title text */
+
+            text-align: center;
+
+            font-size: 2.2rem; /* Adjusted title font size */
+
+            color: darkgray; /* Dark gray text color as requested */
+
+            margin-bottom: 10px; /* Reduced spacing below main title */
+
+            line-height: 1.2; /* Adjust line height for multi-line title */
+
+        }
+
+        .story-subtitle { /* New class for the subtitle text */
+
+            text-align: center;
+
+            font-size: 1.2rem; /* Smaller subtitle font size */
+
+            color: #555; /*  A softer, darker grey for subtitle */
+
+            font-style: italic; /* Italic style for subtitle to differentiate */
+
+            margin-bottom: 30px; /* Spacing below subtitle, before story items */
+
+            line-height: 1.4; /* Adjust line height for subtitle */
+
+            max-width: 800px; /* Limit subtitle width for better readability */
+
+            margin-left: auto; /* Center subtitle horizontally */
+
+            margin-right: auto;
+
+        }
+
+        .story-item {
+
+            margin-bottom: 40px; /* Spacing between story items */
+
+            text-align: center; /* Center align image and caption */
+
+        }
+
+        .story-item img {
+
+            max-width: 100%; /* Responsive image width */
+
+            height: auto;
+
+            border-radius: 10px;
+
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+            margin-bottom: 10px; /* Space between image and caption */
+
+        }
+
+        .story-item .caption {
+
+            font-size: 1rem;
+
+            color: #555; /* Muted caption color */
+
+            font-style: italic;
+
+        }
+
+        /* Optional loading indicator styles */
+
+        #loading-indicator {
+
+            text-align: center;
+
+            padding: 20px;
+
+            color: #777;
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="heart-background">
+
+        <div class="heart"></div>
+
+        <div class="heart"></div>
+
+        <div class="heart"></div>
+
+        <div class="heart"></div>
+
+        <div class="heart"></div>
+
+        <div class="heart"></div>
+
+        <div class="heart"></div>
+
+        <div class="heart"></div>
+
+        <div class="heart"></div>
+
+        <div class="heart"></div>
+
+        <div class="heart"></div>
+
+        <div class="heart"></div>
+
+        <div class="heart"></div>
+
+        <div class="heart"></div>
+
+        <div class="heart"></div>
+
+    </div>
+
+    <div class="content">
+
+        <p class="story-title">Kjo faqe i dedikohet dashnis Drenit,<br>Lumit &lt;3</p>
+
+        <p class="story-subtitle">Lumni Brahimi, je djali ma i bukur, ma i sjellshmi, ma pasterti, ma seksi, ma i jashtzakonshmi, ma i omli edhe djali ma perfekt per mu.</p> <div id="story-container">
+
+            </div>
+
+        <div id="loading-indicator">Loading more memories...</div>
+
+    </div>
+
+
+
+    <script>
+
+        document.addEventListener('DOMContentLoaded', function() {
+
+            const storyContainer = document.getElementById('story-container');
+
+            const loadingIndicator = document.getElementById('loading-indicator');
+
+            let page = 1; // Starting page for loading content
+
+            let loading = false; // Flag to prevent multiple simultaneous loads
+
+
+
+            const imageURLs = [ // Replace with your actual image URLs and captions
+
+                { url: 'images/love1.jpg', caption: 'Our first adventure together.' },
+
+                { url: 'images/love2.jpg', caption: 'Exploring new places, hand in hand.' },
+
+                { url: 'images/love3.jpg', caption: 'Everyday moments become memories.' },
+
+                { url: 'images/love1.jpg', caption: 'More memories to come...' },
+
+                { url: 'images/love2.jpg', caption: 'And even more love to share.' },
+
+                { url: 'images/love3.jpg', caption: 'Our journey is just beginning.' },
+
+                // ... add as many as you want
+
+            ];
+
+
+
+            function createStoryItem(imageURL, captionText) {
+
+                const item = document.createElement('div');
+
+                item.classList.add('story-item');
+
+                const img = document.createElement('img');
+
+                img.src = imageURL;
+
+                img.alt = captionText; // Alt text for accessibility
+
+                const caption = document.createElement('p');
+
+                caption.classList.add('caption');
+
+                caption.textContent = captionText;
+
+                item.appendChild(img);
+
+                item.appendChild(caption);
+
+                return item;
+
+            }
+
+
+
+            function loadMoreContent() {
+
+                if (loading) return; // Prevent loading if already in progress
+
+                loading = true;
+
+                loadingIndicator.style.display = 'block'; // Show loading indicator
+
+
+
+                setTimeout(() => { // Simulate loading delay (replace with actual data fetching if needed)
+
+                    loadingIndicator.style.display = 'none'; // Hide loading indicator after simulated delay
+
+                    let itemsToLoad = 3; // Load 3 items per scroll for example
+
+                    for (let i = 0; i < itemsToLoad; i++) {
+
+                        if (imageURLs.length > 0) {
+
+                            const imageData = imageURLs.shift(); // Get and remove the first item
+
+                            const storyItem = createStoryItem(imageData.url, imageData.caption);
+
+                            storyContainer.appendChild(storyItem);
+
+                        } else {
+
+                            // No more images to load (optional: display "End of Story" message)
+
+                            loadingIndicator.textContent = "The End of Our Beautiful Story So Far...";
+
+                            loadingIndicator.style.display = 'block';
+
+                            window.removeEventListener('scroll', handleScroll); // Stop listening for scroll
+
+                            break; // Exit loop if no more images
+
+                        }
+
+                    }
+
+                    loading = false;
+
+                    page++;
+
+                }, 1000); // Simulated 1-second loading time, adjust as needed
+
+            }
+
+
+
+            function handleScroll() {
+
+                const documentHeight = document.documentElement.scrollHeight;
+
+                const windowHeight = window.innerHeight;
+
+                const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+
+                const scrollThreshold = 200; // Load more content when 200px from the bottom
+
+
+
+                if (documentHeight - windowHeight - scrollTop < scrollThreshold) {
+
+                    loadMoreContent();
+
+                }
+
+            }
+
+
+
+            // Initial Load - load some content on page load
+
+            loadMoreContent();
+
+
+
+            // Event listener for scroll to load more content
+
+            window.addEventListener('scroll', handleScroll);
+
+        });
+
+    </script>
+
+</body>
+
 </html>
