@@ -1,16 +1,27 @@
-// Example: Add a surprise message when clicking a button
-document.addEventListener('DOMContentLoaded', () => {
-  const button = document.createElement('button');
-  button.textContent = 'Click Me!';
-  button.style.margin = '20px auto';
-  button.style.display = 'block';
-  button.style.padding = '10px 20px';
-  button.style.fontSize = '1rem';
-  button.style.cursor = 'pointer';
+document.addEventListener("DOMContentLoaded", function() {
+    function checkPassword() {
+        const password = document.getElementById("password").value;
+        const correctPassword = "yourpassword"; // Change this to your actual password
 
-  document.querySelector('#future-plans').appendChild(button);
-
-  button.addEventListener('click', () => {
-    alert('You are my forever adventure ❤️');
-  });
+        if (password === correctPassword) {
+            window.location.href = "main.html";
+        } else {
+            document.getElementById("error-message").textContent = "Incorrect password. Try again.";
+        }
+    }
+    window.checkPassword = checkPassword;
 });
+
+/* style.css */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f9f9f9;
+}
+.container {
+    margin-top: 50px;
+}
+input, button {
+    margin: 10px;
+    padding: 10px;
+}
