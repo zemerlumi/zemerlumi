@@ -2,125 +2,95 @@
 body {
   font-family: 'Lora', serif;
   margin: 0;
-  background: #fff0f5; /* Soft pink background */
-  color: #2a2a2a; /* Dark gray text */
-  min-height: 100vh;
-  overflow-x: hidden;
+  background: #fff0f5;
+  color: #333;
   line-height: 1.6;
+  overflow-x: hidden;
 }
 
-/* Password Page */
-.container {
-  text-align: center;
-  padding: 2rem;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+/* Floating Hearts Background */
+.heart-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
 }
 
-.heart-icon {
-  font-size: 3.5rem;
-  color: #ff69b4;
-  animation: pulse 1.5s infinite;
-  margin-bottom: 2rem;
+.heart-bg span {
+  position: absolute;
+  color: rgba(255, 105, 180, 0.3);
+  animation: float 12s infinite linear;
 }
 
-h1 {
-  font-weight: 700;
-  font-size: 1.8rem;
-  margin: 0 auto 2rem;
-  max-width: 90%;
-  color: #4a4a4a;
-}
-
-/* Main Page Improvements */
-.love-header {
-  text-align: center;
-  padding: 3rem 1rem 2rem;
-}
-
-.love-header h1 {
-  font-size: 2rem;
-  color: #363636;
-  line-height: 1.4;
+/* Main Content */
+.content-wrapper {
+  max-width: 800px;
   margin: 0 auto;
-  max-width: 600px;
+  padding: 40px 20px;
+}
+
+.header-section {
+  text-align: center;
+  padding: 60px 0 40px;
+}
+
+.main-title {
+  font-size: 2.5rem;
+  color: #4a4a4a;
+  margin-bottom: 20px;
 }
 
 .love-message {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 60px;
+  padding: 0 20px;
+}
+
+/* Image Sections */
+.memory-section {
+  margin: 50px 0;
   text-align: center;
-  padding: 2rem 1.5rem;
-  margin: 0 auto;
-  max-width: 600px;
 }
 
-.photo-gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 1.5rem;
-  padding: 2rem 1.5rem;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.photo-card {
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-  transition: transform 0.2s ease;
-  background: white;
-}
-
-.photo-card img {
+.memory-img {
   width: 100%;
-  height: 200px; /* Reduced image size */
-  object-fit: cover;
-  border-bottom: 3px solid #ffb3d9;
+  max-width: 600px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  margin: 0 auto 20px;
 }
 
 .caption {
-  padding: 1rem;
+  font-style: italic;
+  color: #666;
   font-size: 0.95rem;
-  color: #4a4a4a;
-  text-align: center;
+  max-width: 500px;
+  margin: 0 auto;
 }
 
-/* Floating Hearts Animation */
+/* Animations */
 @keyframes float {
   0% { transform: translateY(100vh) rotate(0deg); }
   100% { transform: translateY(-100vh) rotate(360deg); }
 }
 
-.heart {
-  position: fixed;
-  color: #ff69b4;
-  animation: float 8s infinite linear;
-  pointer-events: none;
-  z-index: 0;
-  font-size: 1.2rem;
-}
-
 /* Mobile Optimization */
 @media (max-width: 768px) {
-  .photo-gallery {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
-    padding: 1.5rem;
+  .main-title {
+    font-size: 2rem;
+    padding: 0 15px;
   }
-
-  .photo-card img {
-    height: 150px;
+  
+  .memory-img {
+    border-radius: 8px;
   }
-
-  .love-header h1 {
-    font-size: 1.6rem;
-    padding: 0 1rem;
-  }
-
-  .love-message {
-    padding: 1.5rem 1rem;
-    font-size: 0.95rem;
+  
+  .caption {
+    padding: 0 15px;
   }
 }
