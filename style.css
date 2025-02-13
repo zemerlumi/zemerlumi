@@ -1,3 +1,4 @@
+
 /* style.css - Updated Styles for Love Story Website */
 
 /* ================== General Styles ================== */
@@ -60,7 +61,7 @@ body {
     position: relative;
     z-index: 1; /* Ensure content stays above the hearts */
     text-align: center;
-    padding: 40px;
+    padding: 20px; /* Reduced padding */
 }
 
 /* Specific styles for .container (Secret Page) - if different from .content */
@@ -73,7 +74,8 @@ body {
 }
 
 
-/* ================== Header Section ================== */
+/* ================== Header Section (for Secret Page Container) ================== */
+/* Header styles are now less relevant for the main endless scroll page as the title is directly in .content */
 .header h1 {
     font-size: 3rem;
     color: #333; /* Darker text for readability */
@@ -86,41 +88,9 @@ body {
     margin-bottom: 40px;
 }
 
-/* ================== Section (How We Met) ================== */
-.section h2 {
-    font-size: 2rem;
-    color: #333; /* Darker text for readability */
-    margin-bottom: 20px;
-}
 
-.section p {
-    font-size: 1.2rem;
-    color: #333; /* Darker text for readability */
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-/* ================== Gallery Section ================== */
-.gallery {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-    margin-top: 40px;
-}
-
-.gallery img {
-    width: 30%;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease-in-out;
-}
-
-.gallery img:hover {
-    transform: scale(1.1); /* Enlarge image on hover */
-}
-
-/* ================== Footer Section ================== */
+/* ================== Footer Section (for Secret Page Container) ================== */
+/* Footer styles are less relevant for the main endless scroll page */
 .footer {
     padding-top: 40px; /* Add some space above the footer text */
 }
@@ -177,7 +147,7 @@ button[type="submit"]:hover {
         font-size: 16px; /* Adjust base font size for mobile if needed */
     }
     .content, .container {
-        padding: 20px; /* Less padding on mobile */
+        padding: 15px; /* Even less padding on mobile for endless page */
     }
     .header h1 {
         font-size: 2.5rem; /* Smaller heading for mobile */
@@ -203,18 +173,18 @@ button[type="submit"]:hover {
     }
 
     .gallery {
-        flex-direction: column; /* Stack images vertically on mobile */
+        flex-direction: column; /* Stack images vertically on mobile - gallery styles are less relevant now but kept for potential reuse*/
         align-items: center; /* Center images in the column */
         gap: 15px; /* Reduced gap for stacked images */
     }
     .gallery img {
-        width: 95%; /* Make images almost full-width on mobile */
+        width: 95%; /* Make images almost full-width on mobile - gallery styles less relevant*/
         margin-bottom: 15px; /* Add spacing between stacked images */
     }
 
     /* Mobile adjustments for Secret Page container and input */
     .container {
-        padding: 30px; /* Less padding on mobile for secret page container */
+        padding: 25px; /* Less padding on mobile for secret page container */
         margin: 20px auto; /* Less margin on mobile for secret page container */
     }
     #passwordInput {
