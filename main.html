@@ -1,49 +1,37 @@
-<style>
-    /* Inline styles for basic layout - consider moving to style.css for better organization in larger projects */
-    body {
-        overflow-y: scroll; /* Ensure scrollbar is always visible for better UX */
-    }
-    .content {
-        padding: 20px; /* Reduced padding from previous version */
-    }
-    .story-title { /* New class for the main title text */
-        text-align: center;
-        font-size: 2.2rem; /* Adjusted title font size */
-        color: darkgray; /* Dark gray text color as requested */
-        margin-bottom: 10px; /* Reduced spacing below main title */
-        line-height: 1.2; /* Adjust line height for multi-line title */
-    }
-    .story-subtitle { /* New class for the subtitle text */
-        text-align: center;
-        font-size: 1.2rem; /* Smaller subtitle font size */
-        color: #555; /*  A softer, darker grey for subtitle */
-        font-style: italic; /* Italic style for subtitle to differentiate */
-        margin-bottom: 30px; /* Spacing below subtitle, before story items */
-        line-height: 1.4; /* Adjust line height for subtitle */
-        max-width: 800px; /* Limit subtitle width for better readability */
-        margin-left: auto; /* Center subtitle horizontally */
-        margin-right: auto;
-    }
-    .story-item {
-        margin-bottom: 40px; /* Spacing between story items */
-        text-align: center; /* Center align image and caption */
-    }
-    .story-item img {
-        max-width: 100%; /* Responsive image width */
-        height: auto;
-        border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        margin-bottom: 10px; /* Space between image and caption */
-    }
-    .story-item .caption {
-        font-size: 1rem;
-        color: #555; /* Muted caption color */
-        font-style: italic;
-    }
-    /* Optional loading indicator styles */
-    #loading-indicator {
-        text-align: center;
-        padding: 20px;
-        color: #777;
-    }
-</style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Love Story</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="heart-background">
+      <div class="heart"></div>
+      <div class="heart"></div>
+      <div class="heart"></div>
+      <div class="heart"></div>
+      <div class="heart"></div>
+    </div>
+    <div class="content">
+        <div class="header">
+            <h1>Our Love Story</h1>
+            <p>Every moment with you is precious</p>
+        </div>
+        <div class="section">
+            <h2>How We Met</h2>
+            <p>It all started when we crossed paths on a sunny afternoon...</p>
+        </div>
+        <div class="gallery">
+            <img src="images/love1.jpg" alt="Love Image 1">
+            <img src="images/love2.jpg" alt="Love Image 2">
+            <img src="images/love3.jpg" alt="Love Image 3">
+        </div>
+        <div class="footer">
+            <p>With all my love, forever.</p>
+        </div>
+    </div>
+</body>
+</html>
