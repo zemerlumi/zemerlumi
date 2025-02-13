@@ -1,4 +1,4 @@
-//* style.css - Updated Styles for Love Story Website with Simple Hearts and Title */
+/* style.css - Updated Styles for Love Story Website with Subtitle */
 
 /* ================== General Styles ================== */
 body {
@@ -161,7 +161,11 @@ button[type="submit"]:hover {
     }
     .story-title {
         font-size: 2rem; /* Smaller title for mobile */
-        margin-bottom: 20px; /* Adjust spacing */
+        margin-bottom: 8px; /* Reduced spacing for mobile title */
+    }
+    .story-subtitle {
+        font-size: 1rem; /* Smaller subtitle for mobile */
+        margin-bottom: 20px; /* Reduced spacing for mobile subtitle */
     }
     .header h1 {
         font-size: 2.5rem; /* Smaller heading for mobile - might not be used now */
