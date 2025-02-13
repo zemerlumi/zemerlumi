@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>For Dreni & Lumi</title> <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <title>For Dreni & Lumi</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <style>
         /* Inline styles for basic layout - consider moving to style.css for better organization in larger projects */
@@ -13,12 +14,23 @@
         .content {
             padding: 20px; /* Reduced padding from previous version */
         }
-        .story-title { /* New class for the title text */
+        .story-title { /* New class for the main title text */
             text-align: center;
             font-size: 2.2rem; /* Adjusted title font size */
             color: darkred; /* Dark red text color as requested */
-            margin-bottom: 30px; /* Spacing below title */
+            margin-bottom: 10px; /* Reduced spacing below main title */
             line-height: 1.2; /* Adjust line height for multi-line title */
+        }
+        .story-subtitle { /* New class for the subtitle text */
+            text-align: center;
+            font-size: 1.2rem; /* Smaller subtitle font size */
+            color: #555; /*  A softer, darker grey for subtitle */
+            font-style: italic; /* Italic style for subtitle to differentiate */
+            margin-bottom: 30px; /* Spacing below subtitle, before story items */
+            line-height: 1.4; /* Adjust line height for subtitle */
+            max-width: 800px; /* Limit subtitle width for better readability */
+            margin-left: auto; /* Center subtitle horizontally */
+            margin-right: auto;
         }
         .story-item {
             margin-bottom: 40px; /* Spacing between story items */
@@ -61,9 +73,10 @@
         <div class="heart"></div>
         <div class="heart"></div>
         <div class="heart"></div>
-        </div>
+    </div>
     <div class="content">
-        <p class="story-title">Kjo faqe i dedikohet dashnis tem,<br>Lumit &lt;3</p>  <div id="story-container">
+        <p class="story-title">Kjo faqe i dedikohet dashnis Drenit,<br>Lumit &lt;3</p>
+        <p class="story-subtitle">Lumni Brahimi, je djali ma i bukur, ma i sjellshmi, ma pasterti, ma seksi, ma i jashtzakonshmi, ma i omli edhe djali ma perfekt per mu.</p> <div id="story-container">
             </div>
         <div id="loading-indicator">Loading more memories...</div>
     </div>
@@ -79,7 +92,7 @@
                 { url: 'images/love1.jpg', caption: 'Our first adventure together.' },
                 { url: 'images/love2.jpg', caption: 'Exploring new places, hand in hand.' },
                 { url: 'images/love3.jpg', caption: 'Everyday moments become memories.' },
-                { url: 'images/love1.jpg', caption: 'More memories to come...' }, // Example - repeat or add more
+                { url: 'images/love1.jpg', caption: 'More memories to come...' },
                 { url: 'images/love2.jpg', caption: 'And even more love to share.' },
                 { url: 'images/love3.jpg', caption: 'Our journey is just beginning.' },
                 // ... add as many as you want
