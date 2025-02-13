@@ -1,53 +1,26 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Zemer Lumi: Our Love Story</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Love Story</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Header -->
-  <header class="header">
-    <h1>Zemer Lumi: Our Love Story</h1>
-    <p>A journey of love, laughter, and memories.</p>
-  </header>
-
-  <!-- Section 1: How We Met -->
-  <section id="how-we-met" class="section">
-    <h2>How We Met</h2>
-    <img src="images/meeting.jpg" alt="Our First Meeting">
-    <p>We met on a sunny afternoon, and the rest is history...</p>
-  </section>
-
-  <!-- Section 2: Our Adventures -->
-  <section id="our-adventures" class="section">
-    <h2>Our Adventures</h2>
-    <div class="gallery">
-      <img src="images/adventure1.jpg" alt="Adventure 1">
-      <img src="images/adventure2.jpg" alt="Adventure 2">
-      <img src="images/adventure3.jpg" alt="Adventure 3">
+    <div class="header">
+        <h1>Our Love Story</h1>
+        <p>Every moment with you is precious</p>
     </div>
-  </section>
-
-  <!-- Section 3: Quotes -->
-  <section id="quotes" class="section">
-    <h2>Quotes About Us</h2>
-    <blockquote>"Love is not about how much you say 'I love you,' but how much you prove it."</blockquote>
-  </section>
-
-  <!-- Section 4: Future Plans -->
-  <section id="future-plans" class="section">
-    <h2>Future Plans</h2>
-    <p>Together, we’ll travel the world, build a home, and create a lifetime of memories.</p>
-  </section>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <p>Dedicated to my amazing boyfriend ❤️</p>
-  </footer>
-
-  <!-- Optional JavaScript -->
-  <script src="script.js"></script>
+    <div class="section">
+        <h2>How We Met</h2>
+        <p>It all started when...</p>
+    </div>
+    <div class="gallery">
+        <img src="images/love1.jpg" alt="Love Image 1">
+        <img src="images/love2.jpg" alt="Love Image 2">
+        <img src="images/love3.jpg" alt="Love Image 3">
+    </div>
+    <div class="footer">
+        <p>With all my love, forever.</p>
+    </div>
 </body>
 </html>
