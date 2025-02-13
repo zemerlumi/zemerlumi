@@ -1,32 +1,23 @@
-// Password Protection
-function checkPassword() {
-    var password = document.getElementById("password").value;
-    if (password === "08062024") {
-        window.location.href = "valentine.html";
-    } else {
-        document.getElementById("error-message").innerText = "Gabim! Provo prapë! ❤️";
-    }
-}
-
-// Floating Hearts Animation
 document.addEventListener("DOMContentLoaded", function () {
-    const heartContainer = document.querySelector(".hearts-container");
 
-    function createHeart() {
-        const heart = document.createElement("div");
-        heart.innerHTML = "❤️";
-        heart.classList.add("heart");
+    document.getElementById("passwordForm").addEventListener("submit", function (event) {
 
-        heart.style.left = Math.random() * 100 + "vw";
-        heart.style.animationDuration = Math.random() * 3 + 2 + "s";
+        event.preventDefault(); // Prevent form from actually submitting
 
-        heartContainer.appendChild(heart);
+        var passwordInput = document.getElementById("passwordInput").value; // Corrected ID
 
-        setTimeout(() => {
-            heart.remove();
-        }, 5000);
-    }
+        var correctPassword = "06062024"; // Change this to your actual password
 
-    setInterval(createHeart, 500);
+        if (passwordInput === correctPassword) {
+
+            window.location.href = "main.html"; // Redirect to main page
+
+        } else {
+
+            alert("Incorrect password! Try again.");
+
+        }
+
+    });
+
 });
-
