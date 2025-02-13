@@ -1,4 +1,4 @@
-/* style.css - Updated Styles for Love Story Website with Simple Hearts */
+//* style.css - Updated Styles for Love Story Website with Simple Hearts and Title */
 
 /* ================== General Styles ================== */
 body {
@@ -30,31 +30,31 @@ body {
     position: absolute;
     width: 15px; /* Slightly smaller hearts for density */
     height: 15px;
-    background: #ffb3c6; /* Heart color */
+    background: #ffb3c6; /* Heart color - softer pink */
     /* Simpler Heart Shape using border-radius and rotation */
     border-radius: 50% 50% 50% 50% / 50% 50% 0% 50%; /* Heart shape with border-radius */
     transform: rotate(-45deg); /* Rotate to make heart point downwards */
     animation: float 6s infinite ease-in-out alternate; /* Slightly slower animation and duration increased */
-    opacity: 0.7; /* Make hearts slightly translucent */
+    opacity: 0.5; /* Make hearts more translucent, softer */
 }
 
 /* Create many heart layers */
-.heart-background .heart:nth-child(1) { top: 15%; left: 10%; animation-delay: 0s; animation-duration: 7s; opacity: 0.6;}
+.heart-background .heart:nth-child(1) { top: 15%; left: 10%; animation-delay: 0s; animation-duration: 7s; opacity: 0.4;}
 .heart-background .heart:nth-child(2) { top: 25%; left: 30%; animation-delay: 1s; animation-duration: 6s; }
-.heart-background .heart:nth-child(3) { top: 40%; left: 50%; animation-delay: 3s; animation-duration: 5s; opacity: 0.8;}
+.heart-background .heart:nth-child(3) { top: 40%; left: 50%; animation-delay: 3s; animation-duration: 5s; opacity: 0.6;}
 .heart-background .heart:nth-child(4) { top: 60%; left: 70%; animation-delay: 2s; animation-duration: 7s; }
-.heart-background .heart:nth-child(5) { top: 80%; left: 90%; animation-delay: 4s; animation-duration: 6s; opacity: 0.7;}
+.heart-background .heart .heart:nth-child(5) { top: 80%; left: 90%; animation-delay: 4s; animation-duration: 6s; opacity: 0.5;}
 .heart-background .heart:nth-child(6) { top: 10%; left: 60%; animation-delay: 5s; animation-duration: 5s; }
-.heart-background .heart:nth-child(7) { top: 35%; left: 15%; animation-delay: 1.5s; animation-duration: 7s; opacity: 0.9;}
+.heart-background .heart:nth-child(7) { top: 35%; left: 15%; animation-delay: 1.5s; animation-duration: 7s; opacity: 0.7;}
 .heart-background .heart:nth-child(8) { top: 55%; left: 40%; animation-delay: 3.5s; animation-duration: 6s; }
-.heart-background .heart:nth-child(9) { top: 75%; left: 5%;  animation-delay: 2.5s; animation-duration: 5s; opacity: 0.6;}
+.heart-background .heart:nth-child(9) { top: 75%; left: 5%;  animation-delay: 2.5s; animation-duration: 5s; opacity: 0.4;}
 .heart-background .heart:nth-child(10){ top: 90%; left: 80%; animation-delay: 4.5s; animation-duration: 7s; }
 /* Add even more hearts if you want! Just copy and adjust nth-child numbers, top, left, animation-delay, duration, and opacity */
-.heart-background .heart:nth-child(11) { top: 5%; left: 45%; animation-delay: 0.5s; animation-duration: 6.5s; opacity: 0.7;}
+.heart-background .heart:nth-child(11) { top: 5%; left: 45%; animation-delay: 0.5s; animation-duration: 6.5s; opacity: 0.5;}
 .heart-background .heart:nth-child(12) { top: 20%; left: 85%; animation-delay: 2.8s; animation-duration: 5.5s; }
-.heart-background .heart:nth-child(13) { top: 45%; left: 25%; animation-delay: 4.2s; animation-duration: 7.5s; opacity: 0.8;}
+.heart-background .heart:nth-child(13) { top: 45%; left: 25%; animation-delay: 4.2s; animation-duration: 7.5s; opacity: 0.6;}
 .heart-background .heart:nth-child(14) { top: 65%; left: 55%; animation-delay: 1.8s; animation-duration: 6.5s; }
-.heart-background .heart:nth-child(15) { top: 85%; left: 35%; animation-delay: 3.1s; animation-duration: 5.5s; opacity: 0.9;}
+.heart-background .heart:nth-child(15) { top: 85%; left: 35%; animation-delay: 3.1s; animation-duration: 5.5s; opacity: 0.7;}
 
 
 @keyframes float {
@@ -159,21 +159,25 @@ button[type="submit"]:hover {
     .content, .container {
         padding: 15px; /* Even less padding on mobile for endless page */
     }
+    .story-title {
+        font-size: 2rem; /* Smaller title for mobile */
+        margin-bottom: 20px; /* Adjust spacing */
+    }
     .header h1 {
-        font-size: 2.5rem; /* Smaller heading for mobile */
+        font-size: 2.5rem; /* Smaller heading for mobile - might not be used now */
     }
     .header p {
-        font-size: 1.2rem; /* Smaller paragraph text for mobile */
-        margin-bottom: 30px; /* Adjust spacing */
+        font-size: 1.2rem; /* Smaller paragraph text for mobile - might not be used now */
+        margin-bottom: 30px; /* Adjust spacing - might not be used now */
     }
     .section h2 {
-        font-size: 1.8rem; /* Smaller section heading for mobile */
+        font-size: 1.8rem; /* Smaller section heading for mobile - might not be used now */
     }
     .section p {
-        font-size: 1rem; /* Smaller section paragraph for mobile */
+        font-size: 1rem; /* Smaller section paragraph for mobile - might not be used now */
     }
     .footer p {
-        font-size: 0.9rem; /* Slightly smaller footer text */
+        font-size: 0.9rem; /* Slightly smaller footer text - might not be used now */
     }
 
     .heart { /* Targeting the new .heart class within media query as well, if needed to make smaller on mobile */
