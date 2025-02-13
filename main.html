@@ -3,29 +3,124 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Love Story</title>
+    <title>Our Love Story - Endless Scroll</title>
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Inline styles for basic layout - consider moving to style.css for better organization in larger projects */
+        body {
+            overflow-y: scroll; /* Ensure scrollbar is always visible for better UX */
+        }
+        .content {
+            padding: 20px; /* Reduced padding from previous version */
+        }
+        .story-item {
+            margin-bottom: 40px; /* Spacing between story items */
+            text-align: center; /* Center align image and caption */
+        }
+        .story-item img {
+            max-width: 100%; /* Responsive image width */
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            margin-bottom: 10px; /* Space between image and caption */
+        }
+        .story-item .caption {
+            font-size: 1rem;
+            color: #555; /* Muted caption color */
+            font-style: italic;
+        }
+        /* Optional loading indicator styles */
+        #loading-indicator {
+            text-align: center;
+            padding: 20px;
+            color: #777;
+        }
+    </style>
 </head>
 <body>
-    <div class="heart-background"></div> <!-- Background hearts -->
+    <div class="heart-background"></div>
     <div class="content">
-        <div class="header">
-            <h1>Our Love Story</h1>
-            <p>Every moment with you is precious</p>
-        </div>
-        <div class="section">
-            <h2>How We Met</h2>
-            <p>It all started when we crossed paths on a sunny afternoon. Little did we know, that day would change our lives forever.</p>
-        </div>
-        <div class="gallery">
-            <img src="images/love1.jpg" alt="Love Image 1">
-            <img src="images/love2.jpg" alt="Love Image 2">
-            <img src="images/love3.jpg" alt="Love Image 3">
-        </div>
-        <div class="footer">
-            <p>With all my love, forever.</p>
-        </div>
+        <h1>Our Love Story - Endless Moments</h1>
+        <div id="story-container">
+            </div>
+        <div id="loading-indicator">Loading more memories...</div>
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const storyContainer = document.getElementById('story-container');
+            const loadingIndicator = document.getElementById('loading-indicator');
+            let page = 1; // Starting page for loading content
+            let loading = false; // Flag to prevent multiple simultaneous loads
+
+            const imageURLs = [ // Replace with your actual image URLs and captions
+                { url: 'images/love1.jpg', caption: 'Our first adventure together.' },
+                { url: 'images/love2.jpg', caption: 'Exploring new places, hand in hand.' },
+                { url: 'images/love3.jpg', caption: 'Everyday moments become memories.' },
+                { url: 'images/love1.jpg', caption: 'More memories to come...' }, // Example - repeat or add more
+                { url: 'images/love2.jpg', caption: 'And even more love to share.' },
+                { url: 'images/love3.jpg', caption: 'Our journey is just beginning.' },
+                // ... add as many as you want
+            ];
+
+            function createStoryItem(imageURL, captionText) {
+                const item = document.createElement('div');
+                item.classList.add('story-item');
+                const img = document.createElement('img');
+                img.src = imageURL;
+                img.alt = captionText; // Alt text for accessibility
+                const caption = document.createElement('p');
+                caption.classList.add('caption');
+                caption.textContent = captionText;
+                item.appendChild(img);
+                item.appendChild(caption);
+                return item;
+            }
+
+            function loadMoreContent() {
+                if (loading) return; // Prevent loading if already in progress
+                loading = true;
+                loadingIndicator.style.display = 'block'; // Show loading indicator
+
+                setTimeout(() => { // Simulate loading delay (replace with actual data fetching if needed)
+                    loadingIndicator.style.display = 'none'; // Hide loading indicator after simulated delay
+                    let itemsToLoad = 3; // Load 3 items per scroll for example
+                    for (let i = 0; i < itemsToLoad; i++) {
+                        if (imageURLs.length > 0) {
+                            const imageData = imageURLs.shift(); // Get and remove the first item
+                            const storyItem = createStoryItem(imageData.url, imageData.caption);
+                            storyContainer.appendChild(storyItem);
+                        } else {
+                            // No more images to load (optional: display "End of Story" message)
+                            loadingIndicator.textContent = "The End of Our Beautiful Story So Far...";
+                            loadingIndicator.style.display = 'block';
+                            window.removeEventListener('scroll', handleScroll); // Stop listening for scroll
+                            break; // Exit loop if no more images
+                        }
+                    }
+                    loading = false;
+                    page++;
+                }, 1000); // Simulated 1-second loading time, adjust as needed
+            }
+
+            function handleScroll() {
+                const documentHeight = document.documentElement.scrollHeight;
+                const windowHeight = window.innerHeight;
+                const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+                const scrollThreshold = 200; // Load more content when 200px from the bottom
+
+                if (documentHeight - windowHeight - scrollTop < scrollThreshold) {
+                    loadMoreContent();
+                }
+            }
+
+            // Initial Load - load some content on page load
+            loadMoreContent();
+
+            // Event listener for scroll to load more content
+            window.addEventListener('scroll', handleScroll);
+        });
+    </script>
 </body>
 </html>
