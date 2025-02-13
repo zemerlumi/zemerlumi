@@ -4,8 +4,8 @@ body {
     margin: 0;
     line-height: 1.6;
     overflow-x: hidden;
-    background: #fff0f5; /* Light pink background */
-    color: #2a2a2a; /* Very dark gray */
+    background: #fff0f5;
+    color: #2a2a2a;
 }
 
 /* Password Page */
@@ -27,48 +27,6 @@ body {
     color: #ff2d55;
 }
 
-h1 {
-    color: white;
-    font-size: 1.8rem;
-    margin-bottom: 30px;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
-}
-
-#passwordForm {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    width: 100%;
-    max-width: 300px;
-}
-
-input[type="password"] {
-    padding: 12px;
-    border: 2px solid #ffb3d9;
-    border-radius: 25px;
-    font-size: 1rem;
-}
-
-button {
-    padding: 12px;
-    background: #ff4d94;
-    color: white;
-    border: none;
-    border-radius: 25px;
-    cursor: pointer;
-    transition: transform 0.2s ease;
-}
-
-button:hover {
-    transform: scale(1.05);
-}
-
-.hint {
-    color: rgba(255,255,255,0.9);
-    margin-top: 25px;
-    font-style: italic;
-}
-
 /* Main Page Styles */
 .fire-background {
     position: fixed;
@@ -85,12 +43,6 @@ button:hover {
     animation: fire 3s infinite;
     opacity: 0;
     font-size: 1.5rem;
-}
-
-@keyframes fire {
-    0% { transform: translateY(0); opacity: 0; }
-    50% { opacity: 1; }
-    100% { transform: translateY(-100vh); opacity: 0; }
 }
 
 .content-wrapper {
@@ -128,12 +80,6 @@ button:hover {
     text-align: center;
 }
 
-.memory-section h2 {
-    font-size: 1.1rem;
-    font-weight: normal;
-    margin: 20px 0;
-}
-
 .memory-img {
     width: 100%;
     max-width: 600px;
@@ -150,6 +96,7 @@ button:hover {
     font-size: 0.95rem;
 }
 
+/* Animations */
 @keyframes pulse {
     0% { transform: scale(1) rotate(0deg); }
     50% { transform: scale(1.3) rotate(10deg); }
@@ -162,6 +109,25 @@ button:hover {
     100% { transform: translateY(0px); }
 }
 
+@keyframes fire {
+    0% { transform: translateY(0); opacity: 0; }
+    50% { opacity: 1; }
+    100% { transform: translateY(-100vh); opacity: 0; }
+}
+
+@keyframes heart-spawn {
+    0% { transform: scale(0); opacity: 1; }
+    100% { transform: scale(1) translateY(-50px); opacity: 0; }
+}
+
+.heart-spawn {
+    position: absolute;
+    font-size: 1.2rem;
+    animation: heart-spawn 1.5s linear;
+    pointer-events: none;
+}
+
+/* Mobile Optimization */
 @media (max-width: 768px) {
     .main-title {
         font-size: 1.8rem;
