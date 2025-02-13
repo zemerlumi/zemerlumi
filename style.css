@@ -1,175 +1,87 @@
-/* General Styles */
+/* Improved Base Styles */
 body {
-  font-family: 'Lora', serif;
-  margin: 0;
-  padding: 0;
-  color: #5a2a2a;
-  background: #ffe6f2;
-  min-height: 100vh;
-  overflow-x: hidden;
+    font-family: 'Lora', serif;
+    margin: 0;
+    background: linear-gradient(45deg, #ff758c, #ff7eb3);
+    min-height: 100vh;
+    color: #2d0a15;
+    overflow-x: hidden;
 }
 
-/* Password Page Styles */
+/* Password Page Fixes */
 .container {
-  text-align: center;
-  padding: 2rem;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background: linear-gradient(135deg, #ff99cc 0%, #ff6699 100%);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(5px);
 }
 
 .heart-icon {
-  font-size: 4rem;
-  animation: pulse 1.5s infinite;
-  margin-bottom: 1rem;
+    font-size: 4em;
+    animation: pulse 1.5s infinite;
+    color: #ff2d55;
+    margin-bottom: 30px;
 }
 
-h1 {
-  color: #fff;
-  font-size: 2rem;
-  margin-bottom: 2rem;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
-}
-
-#passwordForm {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  max-width: 300px;
-  width: 100%;
-}
-
-input[type="password"] {
-  padding: 1rem;
-  border: 2px solid #ffb3d9;
-  border-radius: 25px;
-  font-size: 1rem;
-  transition: all 0.3s ease;
-}
-
-input[type="password"]:focus {
-  outline: none;
-  border-color: #ff4d94;
-  box-shadow: 0 0 10px #ff4d94;
-}
-
-button {
-  padding: 1rem;
-  border: none;
-  border-radius: 25px;
-  background: #ff4d94;
-  color: white;
-  font-size: 1.1rem;
-  cursor: pointer;
-  transition: transform 0.2s ease;
-}
-
-button:hover {
-  transform: scale(1.05);
-  background: #ff3377;
-}
-
-.hint {
-  color: #fff;
-  margin-top: 2rem;
-  font-style: italic;
-  opacity: 0.8;
-}
-
-/* Main Page Styles */
+/* Main Page Improvements */
 .love-header {
-  text-align: center;
-  padding: 3rem 1rem;
-  background: linear-gradient(135deg, #ff6699 0%, #ff3385 100%);
-  color: white;
-  position: relative;
-  overflow: hidden;
+    padding: 2rem 1rem;
+    background: rgba(255, 235, 235, 0.9);
+    margin: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
 .love-header h1 {
-  font-size: 2.5rem;
-  margin: 0;
-  line-height: 1.3;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    color: #7a1a34;
+    font-size: 1.8rem;
+    line-height: 1.4;
+    margin: 0;
 }
 
 .love-message {
-  padding: 2rem 1rem;
-  background: #fff;
-  margin: 2rem;
-  border-radius: 15px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-  line-height: 1.6;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 2rem;
+    margin: 2rem;
+    border-radius: 15px;
+    line-height: 1.6;
+    font-size: 1.1rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
 }
 
-.photo-gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
-  padding: 2rem;
+/* Mobile-Specific Fixes */
+@media (max-width: 480px) {
+    .container {
+        padding: 15px;
+    }
+    
+    .love-header {
+        margin: 1rem;
+        padding: 1.5rem;
+    }
+    
+    .love-header h1 {
+        font-size: 1.5rem;
+    }
+    
+    .photo-gallery {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 1rem;
+    }
 }
 
-.photo-card {
-  position: relative;
-  border-radius: 15px;
-  overflow: hidden;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease;
+/* Add this to ensure form visibility */
+#passwordForm {
+    width: 100%;
+    max-width: 300px;
 }
 
-.photo-card:hover {
-  transform: translateY(-5px);
-}
-
-.photo-card img {
-  width: 100%;
-  height: 300px;
-  object-fit: cover;
-}
-
-.caption {
-  padding: 1rem;
-  background: white;
-  text-align: center;
-  font-style: italic;
-  color: #5a2a2a;
-}
-
-/* Floating Hearts */
-.heart {
-  position: absolute;
-  color: #ff4d94;
-  animation: float 6s infinite linear;
-  pointer-events: none;
-  z-index: 0;
-}
-
-@keyframes pulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.1); }
-  100% { transform: scale(1); }
-}
-
-@keyframes float {
-  0% { transform: translateY(100vh) rotate(0deg); }
-  100% { transform: translateY(-100vh) rotate(360deg); }
-}
-
-/* Mobile Optimization */
-@media (max-width: 768px) {
-  .love-header h1 {
-    font-size: 2rem;
-  }
-  
-  .photo-gallery {
-    grid-template-columns: 1fr;
-    padding: 1rem;
-  }
-  
-  .photo-card img {
-    height: 250px;
-  }
+input[type="password"] {
+    width: 100%;
+    box-sizing: border-box;
 }
