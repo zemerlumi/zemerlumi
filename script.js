@@ -10,3 +10,16 @@ document.getElementById("passwordForm").addEventListener("submit", function(e) {
         document.getElementById("passwordInput").value = "";
     }
 });
+
+// Heart Spawn Animation
+function createHeartSpawn() {
+    const heart = document.createElement('div');
+    heart.className = 'heart-spawn';
+    heart.innerHTML = '❤️';
+    heart.style.left = Math.random() * 100 + '%';
+    document.body.appendChild(heart);
+    
+    setTimeout(() => heart.remove(), 1500);
+}
+
+setInterval(createHeartSpawn, 800);
