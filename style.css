@@ -1,111 +1,63 @@
-/* General Styles */
-body {
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #ffe6f2;
-    color: #d63384;
-    text-align: center;
-}
-
-/* Password Page */
-.password-page {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
-
+/* Styles for Secret Page Container (can be reused in main page if needed) */
 .container {
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background for content box */
+    border-radius: 15px;
+    padding: 40px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    max-width: 600px; /* Adjust max width as needed */
+    margin: 50px auto; /* Center container on page */
 }
 
-input {
-    padding: 10px;
-    margin: 10px 0;
-    border: 2px solid #d63384;
-    border-radius: 5px;
-    font-size: 16px;
+.heart-icon {
+    font-size: 3em;
+    margin-bottom: 20px;
+    color: red; /* Or any color you prefer for the heart */
 }
 
-button {
-    background-color: #d63384;
+#passwordInput {
+    padding: 12px;
+    border: 2px solid #ff758c; /* Pink border */
+    border-radius: 8px;
+    margin-bottom: 20px;
+    width: 80%; /* Adjust width as needed */
+    max-width: 300px;
+    font-size: 1rem;
+    font-family: 'Lora', serif; /* Ensure font consistency */
+}
+
+button[type="submit"] {
+    padding: 12px 25px;
+    background-color: #ff758c; /* Pink button */
     color: white;
-    padding: 10px;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
     cursor: pointer;
+    font-size: 1rem;
+    font-family: 'Lora', serif; /* Ensure font consistency */
+    transition: background-color 0.3s ease;
 }
 
-/* Title Section */
-.title {
-    font-size: 28px;
-    font-weight: bold;
-    margin-top: 20px;
-    color: #ff4081;
+button[type="submit"]:hover {
+    background-color: #ff4d6d; /* Darker pink on hover */
 }
 
-/* Love Message */
-.love-text {
-    font-size: 18px;
-    margin: 20px auto;
-    width: 80%;
-    line-height: 1.6;
-    color: #d63384;
+.hint {
+    color: #555; /* Slightly muted hint color */
+    font-style: italic;
 }
 
-/* Floating Hearts */
-.hearts-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    overflow: hidden;
-}
-
-@keyframes float {
-    0% { transform: translateY(0); opacity: 1; }
-    100% { transform: translateY(-100vh); opacity: 0; }
-}
-
-.heart {
-    position: absolute;
-    bottom: 0;
-    font-size: 20px;
-    color: #ff4081;
-    animation: float 5s linear infinite;
-}
-
-/* Image Gallery */
-.gallery {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-    padding: 20px;
-}
-
-.photo {
-    background: white;
-    padding: 10px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 90%;
-    max-width: 350px;
-}
-
-.photo img {
-    width: 100%;
-    border-radius: 10px;
-}
-
-.photo p {
-    margin-top: 10px;
-    font-size: 14px;
-    color: #d63384;
+/* Mobile Styling for Secret Page Container - adjust as needed */
+@media (max-width: 768px) {
+    .container {
+        padding: 30px; /* Less padding on mobile */
+        margin: 20px auto; /* Less margin on mobile */
+    }
+    #passwordInput {
+        width: 95%; /* Wider input on mobile */
+        max-width: none; /* Remove max-width for mobile */
+    }
+    button[type="submit"] {
+        padding: 10px 20px; /* Slightly smaller button padding on mobile */
+    }
 }
