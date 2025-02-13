@@ -1,17 +1,31 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Enter Password</title>
+    <title>Secret Page</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Enter the Secret Password</h1>
-        <input type="password" id="password" placeholder="Password">
-        <button onclick="checkPassword()">Submit</button>
-        <p id="error-message" style="color: red;"></p>
-    </div>
-    <script src="script.js"></script>
+    <h1>Enter the Secret Password</h1>
+    <form id="passwordForm">
+        <input type="password" id="passwordInput" placeholder="Enter password">
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        document.getElementById("passwordForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent the form from refreshing the page
+            
+            const enteredPassword = document.getElementById("passwordInput").value;
+            const correctPassword = "yourpassword"; // Change this to your actual password
+            
+            if (enteredPassword === correctPassword) {
+                window.location.href = "main.html"; // Redirect to main.html on success
+            } else {
+                alert("Wrong password! Try again.");
+            }
+        });
+    </script>
 </body>
 </html>
