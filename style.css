@@ -1,87 +1,126 @@
-/* Improved Base Styles */
+/* Base Styles */
 body {
-    font-family: 'Lora', serif;
-    margin: 0;
-    background: linear-gradient(45deg, #ff758c, #ff7eb3);
-    min-height: 100vh;
-    color: #2d0a15;
-    overflow-x: hidden;
+  font-family: 'Lora', serif;
+  margin: 0;
+  background: #fff0f5; /* Soft pink background */
+  color: #2a2a2a; /* Dark gray text */
+  min-height: 100vh;
+  overflow-x: hidden;
+  line-height: 1.6;
 }
 
-/* Password Page Fixes */
+/* Password Page */
 .container {
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(5px);
+  text-align: center;
+  padding: 2rem;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .heart-icon {
-    font-size: 4em;
-    animation: pulse 1.5s infinite;
-    color: #ff2d55;
-    margin-bottom: 30px;
+  font-size: 3.5rem;
+  color: #ff69b4;
+  animation: pulse 1.5s infinite;
+  margin-bottom: 2rem;
+}
+
+h1 {
+  font-weight: 700;
+  font-size: 1.8rem;
+  margin: 0 auto 2rem;
+  max-width: 90%;
+  color: #4a4a4a;
 }
 
 /* Main Page Improvements */
 .love-header {
-    padding: 2rem 1rem;
-    background: rgba(255, 235, 235, 0.9);
-    margin: 2rem;
-    border-radius: 15px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  padding: 3rem 1rem 2rem;
 }
 
 .love-header h1 {
-    color: #7a1a34;
-    font-size: 1.8rem;
-    line-height: 1.4;
-    margin: 0;
+  font-size: 2rem;
+  color: #363636;
+  line-height: 1.4;
+  margin: 0 auto;
+  max-width: 600px;
 }
 
 .love-message {
-    background: rgba(255, 255, 255, 0.9);
-    padding: 2rem;
-    margin: 2rem;
-    border-radius: 15px;
-    line-height: 1.6;
-    font-size: 1.1rem;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  padding: 2rem 1.5rem;
+  margin: 0 auto;
+  max-width: 600px;
 }
 
-/* Mobile-Specific Fixes */
-@media (max-width: 480px) {
-    .container {
-        padding: 15px;
-    }
-    
-    .love-header {
-        margin: 1rem;
-        padding: 1.5rem;
-    }
-    
-    .love-header h1 {
-        font-size: 1.5rem;
-    }
-    
-    .photo-gallery {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-        padding: 1rem;
-    }
+.photo-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-/* Add this to ensure form visibility */
-#passwordForm {
-    width: 100%;
-    max-width: 300px;
+.photo-card {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease;
+  background: white;
 }
 
-input[type="password"] {
-    width: 100%;
-    box-sizing: border-box;
+.photo-card img {
+  width: 100%;
+  height: 200px; /* Reduced image size */
+  object-fit: cover;
+  border-bottom: 3px solid #ffb3d9;
+}
+
+.caption {
+  padding: 1rem;
+  font-size: 0.95rem;
+  color: #4a4a4a;
+  text-align: center;
+}
+
+/* Floating Hearts Animation */
+@keyframes float {
+  0% { transform: translateY(100vh) rotate(0deg); }
+  100% { transform: translateY(-100vh) rotate(360deg); }
+}
+
+.heart {
+  position: fixed;
+  color: #ff69b4;
+  animation: float 8s infinite linear;
+  pointer-events: none;
+  z-index: 0;
+  font-size: 1.2rem;
+}
+
+/* Mobile Optimization */
+@media (max-width: 768px) {
+  .photo-gallery {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    padding: 1.5rem;
+  }
+
+  .photo-card img {
+    height: 150px;
+  }
+
+  .love-header h1 {
+    font-size: 1.6rem;
+    padding: 0 1rem;
+  }
+
+  .love-message {
+    padding: 1.5rem 1rem;
+    font-size: 0.95rem;
+  }
 }
