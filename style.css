@@ -161,3 +161,47 @@ button[type="submit"]:hover {
     }
     .header h1 {
         font-size: 2.5rem; /* Smaller heading for mobile */
+    }
+    .header p {
+        font-size: 1.2rem; /* Smaller paragraph text for mobile */
+        margin-bottom: 30px; /* Adjust spacing */
+    }
+    .section h2 {
+        font-size: 1.8rem; /* Smaller section heading for mobile */
+    }
+    .section p {
+        font-size: 1rem; /* Smaller section paragraph for mobile */
+    }
+    .footer p {
+        font-size: 0.9rem; /* Slightly smaller footer text */
+    }
+
+    .heart { /* Targeting the new .heart class within media query as well, if needed to make smaller on mobile */
+        width: 12px; /* Smaller hearts on mobile (optional) */
+        height: 12px;
+    }
+
+
+    .gallery {
+        flex-direction: column; /* Stack images vertically on mobile - gallery styles are less relevant now but kept for potential reuse*/
+        align-items: center; /* Center images in the column */
+        gap: 15px; /* Reduced gap for stacked images */
+    }
+    .gallery img {
+        width: 95%; /* Make images almost full-width on mobile - gallery styles less relevant*/
+        margin-bottom: 15px; /* Add spacing between stacked images */
+    }
+
+    /* Mobile adjustments for Secret Page container and input */
+    .container {
+        padding: 25px; /* Less padding on mobile for secret page container */
+        margin: 20px auto; /* Less margin on mobile for secret page container */
+    }
+    #passwordInput {
+        width: 95%; /* Wider input on mobile */
+        max-width: none; /* Remove max-width for mobile input */
+    }
+    button[type="submit"] {
+        padding: 10px 20px; /* Slightly smaller button padding on mobile */
+    }
+}
