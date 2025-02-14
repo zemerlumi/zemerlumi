@@ -5,7 +5,7 @@ body {
     line-height: 1.6;
     overflow-x: hidden;
     background: #fff0f5;
-    color: #333;
+    color: #2a2a2a;
 }
 
 /* Password Page */
@@ -15,7 +15,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: rgba(255, 230, 230, 0.5);
+    background: linear-gradient(135deg, #ff99cc 0%, #ff6699 100%);
     text-align: center;
     padding: 20px;
 }
